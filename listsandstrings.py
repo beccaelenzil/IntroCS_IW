@@ -32,5 +32,10 @@ print 'answer5',answer5
 answer6 = c[0:4]+m[1:3]+h[-2]
 print 'answer6',answer6
 answer7 = h[1::]+m[1::]
-print answer7
-answer8 = 
+print 'answer7',answer7
+answer8 = h[0:3]+m[-1]+c[-1]+h[0:3]*3
+print 'answer8',answer8
+answer9= c[3:6]+c[1]+m[0]+h[-1:-3:-1]+c[-2]+c[1]
+print 'answer9',answer9
+answer10= c[0:6:2]+h[1:3]+c[0]+h[1]+c[2:4]
+print 'answer10',answer10
