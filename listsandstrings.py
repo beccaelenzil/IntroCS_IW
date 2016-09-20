@@ -39,3 +39,8 @@ answer9= c[3:6]+c[1]+m[0]+h[-1:-3:-1]+c[-2]+c[1]
 print 'answer9',answer9
 answer10= c[0:6:2]+h[1:3]+c[0]+h[1]+c[2:4]
 print 'answer10',answer10
+
+cs= 'computer'
+s='science'
+#using 'cs' and 's' print competent
+print cs[0:4]+cs[-2:-4:-1]+s[-1:-5:-2]+cs[-3]
