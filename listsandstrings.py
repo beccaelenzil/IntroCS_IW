@@ -44,3 +44,4 @@ cs= 'computer'
 s='science'
 #using 'cs' and 's' print competent
 print cs[0:4]+cs[-2:-4:-1]+s[-1:-5:-2]+cs[-3]
+
