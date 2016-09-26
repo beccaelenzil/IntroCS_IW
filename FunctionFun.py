@@ -46,7 +46,10 @@ def convertFromSeconds( s ):
     seconds = s            # # of seconds
     return [days, hours, minutes, seconds]
 print 'convertFromSeconds(86400)', convertFromSeconds(86400)
+print 'convertFromSeconds(100000)', convertFromSeconds(100000)
 
 def front3(string):
-    return string[0:3]*3
+    return string[:3]*3
 print 'front3(java) is',front3('java')
+print 'front3(ja) is',front3('ja')
+
