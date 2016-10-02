@@ -23,9 +23,9 @@ def checkends(s):
     """takes in a string s and returns True if the first character in s
     is the same as the last character in s. It returns False otherwise. """
     if s[0] == s[-1]:
-        return 'true'
+        return True
     else:
-        return 'false'
+        return False
 print 'checkends (true) is', checkends('true')
 
 def flipside(s):
