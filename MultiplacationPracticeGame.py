@@ -1,11 +1,16 @@
 import random
 import math
+
 def numrange():
     print ('What number range do you want to work with?')
     global high
-    high=raw_input('Please enter your high number:')
+    high='test'
+    while high.isdigit()==False:
+        high=raw_input('Please enter your high number:')
     global low
-    low=raw_input('Please enter your low number:')
+    low='test'
+    while low.isdigit()==False:
+        low=raw_input('Please enter your low number:')
 
 def play():
     wrong=0

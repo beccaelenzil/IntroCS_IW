@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0a59451c-b658-45ed-b727-ef8c3df2e1d9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MultiplacationPracticeGame.py" afterPath="$PROJECT_DIR$/MultiplacationPracticeGame.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Testing.py" afterPath="$PROJECT_DIR$/Testing.py" />
     </list>
     <ignored path="IntroCS_IW.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MultiplacationPracticeGame.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MultiplacationPracticeGame.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MultiplacationPracticeGame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+            <state relative-caret-position="119">
+              <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -45,7 +44,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ForLoops.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ForLoops.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ForLoops.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -656,21 +655,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MultiplacationPracticeGame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ForLoops.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultiplacationPracticeGame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
