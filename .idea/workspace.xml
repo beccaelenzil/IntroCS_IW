@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a59451c-b658-45ed-b727-ef8c3df2e1d9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ForLoops.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MultiplacationPracticeGame.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Testing.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FunctionFun.py" afterPath="$PROJECT_DIR$/FunctionFun.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MultiplacationPracticeGame.py" afterPath="$PROJECT_DIR$/MultiplacationPracticeGame.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Testing.py" afterPath="$PROJECT_DIR$/Testing.py" />
     </list>
     <ignored path="IntroCS_IW.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,8 +26,8 @@
       <file leaf-file-name="Testing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Testing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+            <state relative-caret-position="34">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -41,7 +37,7 @@
         <entry file="file://$PROJECT_DIR$/MultiplacationPracticeGame.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -79,9 +75,9 @@
         <option value="$PROJECT_DIR$/FunctionFun.py" />
         <option value="$PROJECT_DIR$/MultiplacationProjectGame.py" />
         <option value="$PROJECT_DIR$/listsandstrings.py" />
+        <option value="$PROJECT_DIR$/ForLoops.py" />
         <option value="$PROJECT_DIR$/Testing.py" />
         <option value="$PROJECT_DIR$/MultiplacationPracticeGame.py" />
-        <option value="$PROJECT_DIR$/ForLoops.py" />
       </list>
     </option>
   </component>
@@ -141,7 +137,7 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$USER_HOME$" />
   </component>
-  <component name="RunManager" selected="Python.ForLoops">
+  <component name="RunManager" selected="Python.MultiplacationPracticeGame">
     <configuration default="false" name="Indexingandslicing" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -401,9 +397,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.ForLoops" />
-        <item index="1" class="java.lang.String" itemvalue="Python.MultiplacationPracticeGame" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Testing" />
+        <item index="0" class="java.lang.String" itemvalue="Python.MultiplacationPracticeGame" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Testing" />
+        <item index="2" class="java.lang.String" itemvalue="Python.ForLoops" />
         <item index="3" class="java.lang.String" itemvalue="Python.FunctionFun" />
         <item index="4" class="java.lang.String" itemvalue="Python.Indexingandslicing" />
       </list>
@@ -417,12 +413,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="694" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24543288" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30793652" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30793652" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -448,7 +444,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -654,8 +650,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Testing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        <state relative-caret-position="34">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -663,7 +659,7 @@
     <entry file="file://$PROJECT_DIR$/MultiplacationPracticeGame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

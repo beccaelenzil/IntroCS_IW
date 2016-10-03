@@ -1,14 +1,14 @@
 import random
 import math
+def numrange():
+    print ('What number range do you want to work with?')
+    global high
+    high=raw_input('Please enter your high number:')
+    global low
+    low=raw_input('Please enter your low number:')
 
-print ('What number range do you want to work with?')
-high= 'afejn'
-low ='iwegbr'
-while isinstance(high,int) is True:
-    high=raw_input('High Number:')
-while isinstance(low,int) is True:
-  low = raw_input('Low Number:')
 def play():
+    wrong=0
     for i in range(5):
         factor1 = random.randint(int(low),int(high))
         factor2 = random.randint(int(low),int(high))
@@ -22,15 +22,17 @@ def play():
                     print 'Correct'
                 else:
                     print 'Incorrect'
+                    wrong+=1
+
             except:
                 print ('Enter an integer')
-
-    print 'Congradulations for answering 5 simple multiplication questions'
+    print 'Congradulations for answering 5 simple multiplication questions.  You guessed wrong',wrong,'times.'
 def instructions():
     print 'here are 5 multiplication problems'
 
 def main():
     instructions()
     raw_input('press enter to continue')
+    numrange()
     play()
 main()
