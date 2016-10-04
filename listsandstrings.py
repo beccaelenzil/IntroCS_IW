@@ -14,7 +14,7 @@ answer0 = [ e[0] ] + pi[-2:]
 print answer0
 answer1 = e[1:3]
 print 'answer1 =', answer1
-answer2 = pi[-1::-2]
+answer2 = pi[-1:-4:-2]
 print 'answer2 =', answer2
 answer3 = pi[1::]
 print 'answer3 =', answer3
