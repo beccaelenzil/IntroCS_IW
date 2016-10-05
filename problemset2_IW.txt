@@ -39,7 +39,7 @@ Notes: There is a bug with convertFromSeconds
 convertFromSeconds(100000) should be [1, 3, 46, 40] and yours is [1, 3, 40, 40]
 
 Hrmm.. now I see that you think my math is wrong. I redid my math, let's take a look at it together.
-
+i could not find any problem in my math, can you tell me where I should I look?
 
 flipside('homework') == 'workhome':  workhome True
 flipside('carpets') ==  'petscar':  petscar True

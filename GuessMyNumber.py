@@ -1,4 +1,5 @@
 import random
+import sys
 compnum=random.randint(1,100)
 user='test'
 x=0
@@ -9,6 +10,7 @@ while user!=compnum:
     user='test'
     while user.isdigit()==False:
         user=raw_input('Guess The Number:')
+    user = int(user)
     if int(user)>compnum:
         print user,'is greater then The Number'
         x+=1
