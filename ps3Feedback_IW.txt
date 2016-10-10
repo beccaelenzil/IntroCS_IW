@@ -1,4 +1,4 @@
-Total Score:
+Total Score: 7.5/9
 Notes:
 -------------------------------------
 Problem 1) For Loops --- Score: 1.5/3
@@ -37,9 +37,9 @@ count_evens()
 count9()
 
 -------------------------------------
-Problem 2) Multiplication Practice Game --- Score:
-Notes:
+Problem 2) Multiplication Practice Game --- Score: 3/3
+Notes: Nice work! I like that the user can choose the factor range and you give clear instructions.
 
 -------------------------------------
-Problem 3) Guess My Number --- Score:
-Notes:
+Problem 3) Guess My Number --- Score: 3/3
+Notes: Nice implementation of guess counter
