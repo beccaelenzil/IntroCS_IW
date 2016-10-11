@@ -1,0 +1,45 @@
+Total Score: 7.5/9
+Notes:
+-------------------------------------
+Problem 1) For Loops --- Score: 1.5/3
+Notes:
+1) You need to complete count9() and count_evens()
+
+2) for the mult() function when you convert to an int you need to say result = int(result)
+a more efficient way to look for negatives than converting to strings would be to check
+if the value is less than 0.
+
+power(2,5): should be 32 ==  32 True
+power(5,2): should be 25 ==  25 True
+power(42,0): should be 1 ==  1 True
+power(0,42): should be 0 ==  0 True
+power(0,0): should be 1 ==  1 True
+
+summedOdds( [4,5,6] ): should be 5 ==  5 True
+summedOdds( range(3,10) ): should be 24 ==  24 True
+
+mult(6,7)    42 == 42 False
+mult(6,-7)  -42 == -42 False
+mult(-6,7)  -42 == -42 False
+mult(-6,-7)  42 == 42 False
+mult(6,0)     0 == 0 False
+mult(0,7)     0 == 0 False
+mult(0,0)     0 == 0 False
+
+dot( [5,3], [6,4] )     42.0 == 42 True
+dot( [1,2,3,4], [10,100,1000,10000] )  43210.0 == 43210 True
+dot( [5,3], [6] )        0.0 == 0 True
+dot( [], [6] )           0.0 == 0 True
+dot( [], [] )            0.0 == 0 True
+
+
+count_evens()
+count9()
+
+-------------------------------------
+Problem 2) Multiplication Practice Game --- Score: 3/3
+Notes: Nice work! I like that the user can choose the factor range and you give clear instructions.
+
+-------------------------------------
+Problem 3) Guess My Number --- Score: 3/3
+Notes: Nice implementation of guess counter
