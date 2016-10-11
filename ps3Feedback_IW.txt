@@ -25,6 +25,8 @@ mult(-6,-7)  42 == 42 False
 mult(6,0)     0 == 0 False
 mult(0,7)     0 == 0 False
 mult(0,0)     0 == 0 False
+Im not sure whats wrong with my mult problems.  it looks like it cheaks out
+
 
 dot( [5,3], [6,4] )     42.0 == 42 True
 dot( [1,2,3,4], [10,100,1000,10000] )  43210.0 == 43210 True
