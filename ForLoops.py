@@ -44,8 +44,9 @@ def mult(m,n):
     for a in range(n):
         result +=m
     result= str(p)+str(result)
-    int(result)
+    result=int(result)
     return result
+
 print "mult(6,7)    42 ==", mult(6,7)
 print "mult(6,-7)  -42 ==", mult(6,-7)
 print "mult(-6,7)  -42 ==", mult(-6,7)
