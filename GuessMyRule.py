@@ -56,9 +56,12 @@ def play(low,high,a,b):
                 pass
         x=int(x)
         y=a*x+b
-        apen='x='+str(x)+' y='+str(y)
+        apen='x='+str(x)+' -> y='+str(y)
         guesses.append(apen)
-        print guesses
+
+        for guess in guesses:
+            print guess
+
         a11='false'
         a1='false'
         while a11.isdigit()==False:
