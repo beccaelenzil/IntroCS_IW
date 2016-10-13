@@ -1,0 +1,12 @@
+
+recursion resembles nesting dolls
+contingue breaking down until the simplest problem
+rebuld
+fibonacci
+f(0)=0
+f(1)=1
+f(n)=f(n-)+f(n-2)
+f(4)=f(3)+f(2)
+f(3)=f(2)+f(1)
+f(2)=f(1)+f(0)
+
