@@ -26,15 +26,17 @@ print "fib(5) == 5 = ",fib(5)," : ", 5 == fib(5)
 print "fib(11) == 89 = ",fib(11)," : ", 89 == fib(11)
 print "fibIter(5) == 5 = ",fibIter(5)," : ", 5 == fibIter(5)
 print "fibIter(11) == 89 = ",fibIter(11)," : ", 89 == fibIter(11)
-invl=[]
 def listReverse(L):
+    L1=[]
+    listReverse2(L, L1)
+    return L1
+def listReverse2(L, L1):
     if len(L)==0:
-        return invl
+        return L1
     else:
-        list.append(invl,L[-1])
-        L=L[0:-1]
-        listReverse(L)
-    return invl
+        list.append(L1,list.pop(L,-1))
+        listReverse2(L, L1)
+    return L1
 
 def listReverseIter(L):
     return L[-1::-1]
