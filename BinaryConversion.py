@@ -67,4 +67,40 @@ def numToTernary(N):
         return numToTernary(N/3) +'1'
     else:
         return numToTernary(N/3)+'0'
-print numToTernary()
+print numToTernary(42),'should be \'1120\''
+print numToTernary(4242),'should be \'12211010\''
+
+def ternaryToNum(N):
+    y=-1
+    return ternaryToNum2(N,y)
+def ternaryToNum2(N,y):
+    if N == '':
+        return 0
+  # if the last digit is a '2'
+    elif N[-1] == '2':
+        y += 1
+        return  ternaryToNum2(N[0:-1],y)+(math.pow(3,y)*2)
+    elif N[-1]=='1':
+        y+=1
+        return ternaryToNum2(N[0:-1],y)+math.pow(3,y)
+    else: # last digit must be '0'
+        y += 1
+        return  ternaryToNum2(N[0:-1],y)
+
+
+def balancedTernaryToNum(N):
+    y=-1
+    return balancedTernaryToNum2(N,y)
+def balancedTernaryToNum2(N,y):
+    if N =='':
+        return 0
+    elif N[-1]=='+':
+        y+=1
+        return balancedTernaryToNum2(N[0:-1],y)+math.pow(3,y)
+    elif N[-1]==0:
+        y+=1
+        return balancedTernaryToNum2(N[0:-1],y)
+    else:
+        y+=1
+        return balancedTernaryToNum2(N[0:-1],y)+(math.pow(3,y)*-1)
+print balancedTernaryToNum('+---0')

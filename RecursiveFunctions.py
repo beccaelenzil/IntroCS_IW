@@ -10,7 +10,9 @@ def fib(n):
 def fibIter(n):
     f0=0
     f1=1
-    if n%2==0:
+    if n==0:
+        f=0
+    elif n%2==0:
         for x in range(n/2):
             f1+=f0
             f0+=f1
@@ -42,7 +44,11 @@ def listReverse2(L, L1):
 
 #this is not an iterative solution, it's a slicing one
 def listReverseIter(L):
-    return L[-1::-1]
+    L1=[]
+    for i in range(len(L)):
+        x=list.pop(L,-1)
+        list.append(L1,x)
+    return L1
 
 print "listReverse([1,2,3,4]) == [4,3,2,1] = ",listReverse([1,2,3,4])," : ",listReverse([1,2,3,4]) == [4,3,2,1]
 print "listReverseIter([1,2,3,4]) == [4,3,2,1] = ",listReverseIter([1,2,3,4])," : ",listReverseIter([1,2,3,4]) == [4,3,2,1]
