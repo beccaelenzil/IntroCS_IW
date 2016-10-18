@@ -97,10 +97,22 @@ def balancedTernaryToNum2(N,y):
     elif N[-1]=='+':
         y+=1
         return balancedTernaryToNum2(N[0:-1],y)+math.pow(3,y)
-    elif N[-1]==0:
+    elif N[-1]=='0':
         y+=1
         return balancedTernaryToNum2(N[0:-1],y)
     else:
         y+=1
-        return balancedTernaryToNum2(N[0:-1],y)+(math.pow(3,y)*-1)
-print balancedTernaryToNum('+---0')
+        return balancedTernaryToNum2(N[0:-1],y)-math.pow(3,y)
+print balancedTernaryToNum('+---0'),'should be 42.0'
+print balancedTernaryToNum('++-0+'),'should be 100.0'
+
+def numToBalancedTernary(N):
+    if N==0: #code for numToTernary
+        return ''
+    elif N%3==2:
+        return numToBalancedTernary((N+1)/3) +'-'
+    elif N%3==1:
+        return numToBalancedTernary(N/3) +'+'
+    elif N%3==0:
+        return numToBalancedTernary(N/3)+'0'
+print numToBalancedTernary(42),'should be +---0'
