@@ -1,5 +1,5 @@
 Total Score: 7.5/9
-Notes: Score increased to 9/9 
+Notes: Score increased to 9/9
 
 -------------------------------------
 Problem 1) For Loops --- Score: 1.5/3

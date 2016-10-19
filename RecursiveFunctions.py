@@ -30,6 +30,7 @@ def listReverse(L):
     L1=[]
     listReverse2(L, L1)
     return L1
+
 def listReverse2(L, L1):
     if len(L)==0:
         return L1
@@ -38,6 +39,8 @@ def listReverse2(L, L1):
         listReverse2(L, L1)
     return L1
 
+
+#this is not an iterative solution, it's a slicing one
 def listReverseIter(L):
     return L[-1::-1]
 
