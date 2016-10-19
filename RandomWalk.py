@@ -49,3 +49,18 @@ def ave_squared_displacement(numtrials):
         total+=rwposPlain(0,100)[2]
     return total/numtrials
 print 'average squared displacment is',ave_squared_displacement(100)
+
+"""
+explanation:
+   In order to compute the average signed displacement for
+   a random walker after 100 random steps, I
+   ran rwpos(0,100) numtrials times and had a variable total
+   that was equal to the sum.  I then divided total by numtrials
+   it averages to around 0
+   to compute squared displacement i used a copy of average_signed_displacement
+   except a had the variable it pulled out of rwposPlain be squared displacement
+   it averages to around 100
+one example of data:
+   average signed displacment is -1
+   average squared displacment is 122
+"""
