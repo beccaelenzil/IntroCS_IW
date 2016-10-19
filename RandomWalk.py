@@ -29,7 +29,7 @@ def rwsteps( start, low, hi ):
 
 def rwposPlain(start,nsteps):
     y=0
-    start1=start
+    start1=float(start)
     for i in range (nsteps):
         start=start+rs()
         y+=1
@@ -41,13 +41,14 @@ def ave_signed_displacement(numtrials):
     for i in range(numtrials):
         total+=rwposPlain(0,100)[1]
     return total/numtrials
-print 'average signed displacment is',ave_signed_displacement(100)
 
 def ave_squared_displacement(numtrials):
     total=0
     for i in range(numtrials):
         total+=rwposPlain(0,100)[2]
     return total/numtrials
+#print rwsteps(5,0,10)
+print 'average signed displacment is',ave_signed_displacement(100)
 print 'average squared displacment is',ave_squared_displacement(100)
 
 """
