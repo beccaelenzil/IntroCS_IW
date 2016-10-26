@@ -1,1 +1,22 @@
-Total Score:
+Total Score: 2/6
+Notes:
+-------------------------------------
+Problem 1) Recursive Drawing: 0/3
+Notes: You provided a link to our course trinket page, not your trinket
+
+-------------------------------------
+Problem 2) Recursive Functions: 2/3
+Notes: issue with listReverse
+
+# Fibonnaci Tests
+fib(5) == 5 =  5  :  True
+fib(11) == 89 =  89  :  True
+fibIter(5) == 5 =  5  :  True
+fibIter(11) == 89 =  89  :  True
+
+# List Reverse Tests
+listReverse([1,2,3,4]) == [4,3,2,1] = Traceback (most recent call last):
+  File "<input>", line 18, in <module>
+  File "<input>", line 29, in listReverse
+  File "<input>", line 35, in listReverse2
+TypeError: pop() takes at most 1 argument (2 given)
