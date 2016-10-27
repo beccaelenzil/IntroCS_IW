@@ -13,7 +13,7 @@ def randomgendergroups():
     for i in range (x):
         a=2
         p1=random.randint(0,1)
-        p2=random.randint(0,1)
+        p2=random.randint(0,2)
         if p1==p2:
             t+=1
         else:
@@ -23,11 +23,8 @@ def randomgendergroups():
     print 'defrent gender groups =',u,'/',x
     print 'ration of same gender groups to different gender groups is:',float(t)/x,':',float(u)/x
 
-L1=[1,2,3,4,5,6,7,8,9,10]
-try:
-    list.append(L1,list.pop(L1,-1))
-except:
-    L1=[]
 
 
-print L1
+x='SENTENCING MEMORANDUM'
+x=str.lower(x)
+print x

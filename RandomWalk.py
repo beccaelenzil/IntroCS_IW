@@ -1,5 +1,4 @@
 import random
-import math
 def rs():
     """ rs chooses a random step and returns it
         note that a call to rs() requires parentheses
@@ -16,7 +15,6 @@ def rwsteps( start, low, hi ):
     y=0
     start1=start
     while start!=low and start!=hi:
-#        print 'start is', str(start)
         disp='|'+' '*(hi-low)+'|'
         disp=disp[0:start-1]+'S'+disp[start+1::]
         print disp
@@ -48,8 +46,11 @@ def ave_squared_displacement(numtrials):
         total+=rwposPlain(0,100)[2]
     return total/numtrials
 #print rwsteps(5,0,10)
-print 'average signed displacment is',ave_signed_displacement(100)
-print 'average squared displacment is',ave_squared_displacement(100)
+
+testnum=raw_input('Number of Tests:')
+testnum=int(testnum)
+print 'average signed displacment is',ave_signed_displacement(testnum)
+print 'average squared displacment is',ave_squared_displacement(testnum)
 
 """
 explanation:
