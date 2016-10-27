@@ -69,7 +69,7 @@ def innerReverse(A):
     w=len(A[0])
     newA=copy(A)
     for row in range (h):
-        for col in range (h):
+        for col in range (w):
             newA[0][col]=1
             newA[h-1][col]=1
             newA[row][0]=1
@@ -90,4 +90,38 @@ def countNeighbors(row,col,A):
             count+=A[r][c]
     count-=A[row][col]
     return count
+
+def next_life_generation(A):
+    """ makes a copy of A and then advances one
+        generation of Conway's game of life within
+        the *inner cells* of that copy.
+        The outer edge always stays at 0.
+    """
+# cheak the old model to update the new model
+    newA=copy(A)
+    h=len(A)
+    w=len(A[0])
+    for r in range(len(A)-1):
+        for c in range(len(A[0])-1):
+            if countNeighbors(r,c,A)<2:
+                newA[r][c]=0
+            elif countNeighbors(r,c,A)>3:
+                newA[r][c]=0
+            elif countNeighbors(r,c,A)==3:
+                newA[r][c]=1
+            else:
+                newA[r][c]=A[r][c]
+        for row in range (h):
+            for col in range (w):
+                newA[0][col]=0
+                newA[h-1][col]=0
+                newA[row][0]=0
+                newA[row][w-1]=0
+    return newA
+
+A=randomCells(10,10)
+printBoard(A)
+print ''
+A=next_life_generation(A)
+printBoard(A)
 
