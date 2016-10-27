@@ -46,5 +46,48 @@ def innerCells(w, h):
     for row in range (1,h-1):
         for col in range (1,w-1):
             A[row][col]=1
-X=innerCells(5,5)
-printBoard(X)
+    return A
+
+def randomCells(w, h):
+    A = createBoard(w, h)
+    for row in range (1,h-1):
+        for col in range (1,w-1):
+            A[row][col]=random.randint(0,1)
+    return A
+
+def copy(A):
+    h=len(A)
+    w=len(A[0])
+    newA=createBoard(h,w)
+    for row in range (h):
+        for col in range (w):
+            newA[row][col]=A[row][col]
+    return newA
+
+def innerReverse(A):
+    h=len(A)
+    w=len(A[0])
+    newA=copy(A)
+    for row in range (h):
+        for col in range (h):
+            newA[0][col]=1
+            newA[h-1][col]=1
+            newA[row][0]=1
+            newA[row][w-1]=1
+#reverse, it works
+    for row in range(0,h):
+        for col in range(0,w):
+            if newA[row][col]==1:
+                newA[row][col]=0
+            else:
+               newA[row][col]=1
+    return newA
+
+def countNeighbors(row,col,A):
+    count=0
+    for r in range(row-1,row+2):
+        for c in range(col-1,col+2):
+            count+=A[r][c]
+    count-=A[row][col]
+    return count
+
