@@ -6,7 +6,7 @@ Notes: You provided a link to our course trinket page, not your trinket
 
 -------------------------------------
 Problem 2) Recursive Functions: 2/3
-Notes: issue with listReverse
+Notes: issue with listReverse, corrected - score changed to 3/3
 
 # Fibonnaci Tests
 fib(5) == 5 =  5  :  True
@@ -20,3 +20,8 @@ listReverse([1,2,3,4]) == [4,3,2,1] = Traceback (most recent call last):
   File "<input>", line 29, in listReverse
   File "<input>", line 35, in listReverse2
 TypeError: pop() takes at most 1 argument (2 given)
+
+# List Reverse Tests
+listReverse([1,2,3,4]) == [4,3,2,1] =  [4, 3, 2, 1]  :  True
+listReverseIter([1,2,3,4]) == [4,3,2,1] =  [4, 3, 2, 1]  :  True
+

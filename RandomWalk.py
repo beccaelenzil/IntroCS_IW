@@ -25,6 +25,8 @@ def rwsteps( start, low, hi ):
 #signed displacment: it's the ending position of the random walker
 # minus the starting position of the random walker
 
+rwsteps(5,0,10)
+
 def rwposPlain(start,nsteps):
     y=0
     start1=float(start)
