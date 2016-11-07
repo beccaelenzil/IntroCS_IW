@@ -1,22 +1,11 @@
-# python 2
-#
-# Game of Life
-#
-# Name:
-#
-
 import random
 
-def createOneRow(width):
-    """ returns one row of zeros of width "width"...
-         You should use this in your
-         createBoard(width, height) function """
+def createOneRow(width): #create row
     row = []
     for col in range(width):
         row += [0]
     return row
-def createBoard(width, height):
-    """ returns a 2d array with "height" rows and "width" cols """
+def createBoard(width, height): #returns a 2d array with "height" rows and "width" cols
     A = []
     for row in range(height):
         A += [createOneRow(width)]
@@ -27,32 +16,23 @@ def printBoard(A):
         for col in row:
             line += str(col)
         print line
-def diagonalize(width, height):
-    """ creates an empty board and then modifies it
-        so that it has a diagonal strip of "on" cells.
-    """
-    A = createBoard(width, height)
-
-    for row in range(height):
-        for col in range(width):
-            if row == col:
-                A[row][col] = 1
-            else:
-                A[row][col] = 0
 
     return A
-def innerCells(w, h):
-    A = createBoard(w, h)
-    for row in range (1,h-1):
-        for col in range (1,w-1):
-            A[row][col]=1
-    return A
 
-def randomCells(w, h):
+def randomCells(percentofA,percentofB,w, h):
+    var1=percentofA*(w*h)
+    var2=percentofB*(w*h)
+    var1=int(var1)
+    var2=int(var2)
+    numassign=0
+    var3=(w*h)-(var1-var2)
+    assignlist=var1*['A']+var2*['B']+var3*[' ']
+    assignlist1=random.sample(assignlist,len(assignlist))
     A = createBoard(w, h)
-    for row in range (1,h-1):
-        for col in range (1,w-1):
-            A[row][col]=random.randint(0,1)
+    for row in range (0,h):
+        for col in range (0,w):
+            A[row][col]=assignlist1[numassign]
+            numassign+=1
     return A
 
 def copy(A):
@@ -84,12 +64,30 @@ def innerReverse(A):
     return newA
 
 def countNeighbors(row,col,A):
-    count=0
-    for r in range(row-1,row+2):
-        for c in range(col-1,col+2):
-            count+=A[r][c]
-    count-=A[row][col]
-    return count
+    countA=-1
+    countB=0
+    if A[row][col]=='A':
+        for r in range(row-1,row+2):
+            for c in range(col-1,col+2):
+                if A[r][c]=='A':
+                    countA+=1.0
+                elif A[r][c]=='B':
+                    countB+=1.0
+    elif A[row][col]=='B':
+        for r in range(row-1,row+2):
+            for c in range(col-1,col+2):
+                if A[r][c]=='B':
+                    countA+=1.0
+                elif A[r][c]=='A':
+                    countB+=1.0
+    elif A[row][col]==' ':
+        return 0
+
+    if countB==0:
+        return countA
+    else:
+        count=countA/(countA+countB)
+        return count
 
 def next_life_generation(A):
     """ makes a copy of A and then advances one
@@ -119,11 +117,13 @@ def next_life_generation(A):
                 newA[row][w-1]=0
     return newA
 
-A=randomCells(10,10)
+A=randomCells(.4,.3,10,10)
 printBoard(A)
+print countNeighbors(1,1,A)
+'''
 print ''
 for i in range(10):
     A=next_life_generation(A)
     printBoard(A)
     print " "
-
+'''

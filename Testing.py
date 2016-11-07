@@ -23,8 +23,15 @@ def randomgendergroups():
     print 'defrent gender groups =',u,'/',x
     print 'ration of same gender groups to different gender groups is:',float(t)/x,':',float(u)/x
 
+listtest=[1,2,3,4,5,6,7,8,9,10]
+listtest=random.sample(listtest,len(listtest))
+print listtest
 
-
-x='SENTENCING MEMORANDUM'
-x=str.lower(x)
-print x
+w=10
+h=10
+var1=10 #number of variable one in board
+var2=10 #number of variable two on the board
+var3=(w*h)-(var1-var2)
+assignlist=var1*['A']+var2*['B']+var3*[' ']
+assignlist1=random.sample(assignlist,len(assignlist))
+print assignlist1
