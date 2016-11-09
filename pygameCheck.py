@@ -1,19 +1,19 @@
-from gameOfLife import *
+from GameOfLife import *
 from visual import *
 
 def constants():
     width = 40
-    height = 30
-    cell_size = 18
-    spacing = 2
+    height = 40
+    cell_size = 15
+    spacing = 1
     return [width,height,cell_size,spacing]
 
 def drawBoard(A):
     [width,height,cell_size,spacing] = constants()
     for row in range(height):
-        x_pos = #___________
+        x_pos = spacing+row*(cell_size+spacing)
         for col in range(width):
-            y_pos = #__________
+            y_pos = spacing+col*(cell_size+spacing)
             if A[row][col] == 1:
                 box(pos=(x_pos,y_pos,0), size=(cell_size,cell_size,0), color=color.white)
             elif A[row][col] == 0:

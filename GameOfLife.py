@@ -58,9 +58,9 @@ def randomCells(w, h):
 def copy(A):
     h=len(A)
     w=len(A[0])
-    newA=createBoard(h,w)
-    for row in range (h):
-        for col in range (w):
+    newA=createBoard(w,h)
+    for row in range(h):
+        for col in range(w):
             newA[row][col]=A[row][col]
     return newA
 
@@ -97,7 +97,7 @@ def next_life_generation(A):
         the *inner cells* of that copy.
         The outer edge always stays at 0.
     """
-# cheak the old model to update the new model
+    # cheak the old model to update the new model
     newA=copy(A)
     h=len(A)
     w=len(A[0])

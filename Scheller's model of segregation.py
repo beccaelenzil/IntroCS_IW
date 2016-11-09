@@ -25,7 +25,7 @@ def randomCells(percentofA,percentofB,w, h):
     var1=int(var1)
     var2=int(var2)
     numassign=0
-    var3=(w*h)-(var1-var2)
+    var3=(w*h)-var1-var2
     assignlist=var1*['A']+var2*['B']+var3*[' ']
     assignlist1=random.sample(assignlist,len(assignlist))
     A = createBoard(w, h)
@@ -81,49 +81,74 @@ def countNeighbors(row,col,A):
                 elif A[r][c]=='A':
                     countB+=1.0
     elif A[row][col]==' ':
-        return 0
+        return -1
 
     if countB==0:
         return countA
     else:
         count=countA/(countA+countB)
         return count
+def emptylist(A):
+    emptylist1=[]
+    for r in range(0,len(A)-1):
+        for c in range(0,len(A[0])-1):
+            if A[r][c]==' ':
+                emptylist1.append([r,c])
+            else:
+                pass
+    return emptylist1
 
-def next_life_generation(A):
-    """ makes a copy of A and then advances one
-        generation of Conway's game of life within
-        the *inner cells* of that copy.
-        The outer edge always stays at 0.
-    """
-# cheak the old model to update the new model
+def emptycells(emptylist,row,col,A):
+    z=0
+    h=len(A)
+    w=len(A[0])
+    rdif=1
+    cdif=1
+    while z==0:
+        for r in range(row-rdif,row+(rdif+1)):
+            for c in range(col-cdif,col+(cdif+1)):
+                try:
+                    for x in range(len(emptylist)):
+                        if A[r][c]==' 'and r==emptylist[x][0]and c==emptylist[x][1]:
+                            list.pop(emptylist,x)
+                            cord=[r,c,emptylist]
+                            z=1
+                            return cord
+                except:
+                    pass
+        rdif+=1
+        cdif+=1
+        if rdif>=h and cdif>=w:
+            z=1
+            return -1
+
+def next_life_generation(A,T):
+    emptylist1=emptylist(A)
     newA=copy(A)
     h=len(A)
     w=len(A[0])
-    for r in range(1,len(A)-1):
-        for c in range(1,len(A[0])-1):
-            if countNeighbors(r,c,A)<2:
-                newA[r][c]=0
-            elif countNeighbors(r,c,A)>3:
-                newA[r][c]=0
-            elif countNeighbors(r,c,A)==3:
-                newA[r][c]=1
-            else:
+    for r in range(0,len(A)-1):
+        for c in range(0,len(A[0])-1):
+            #below percent stays the same, also does spaces
+            if countNeighbors(r,c,A)>=T:
                 newA[r][c]=A[r][c]
-        for row in range (h):
-            for col in range (w):
-                newA[0][col]=0
-                newA[h-1][col]=0
-                newA[row][0]=0
-                newA[row][w-1]=0
+            elif countNeighbors(r,c,A)<T and A[r][c] != -1:
+                cord=emptycells(emptylist1,r,c,A)
+                print cord
+                if cord==-1:
+                    pass
+                else:
+                    newA[r][c]=' '
+                    newA[cord[0]][cord[1]]=A[r][c]
+                    print [cord[0],cord[1]]
+                    emptylist1=cord[2]
     return newA
 
-A=randomCells(.4,.3,10,10)
+A=randomCells(.4,.4,5,5)
 printBoard(A)
-print countNeighbors(1,1,A)
-'''
-print ''
-for i in range(10):
-    A=next_life_generation(A)
-    printBoard(A)
-    print " "
-'''
+print '------------------'
+B=next_life_generation(A,.5)
+printBoard(B)
+#print '------------------'
+#C=next_life_generation(A,.5)
+#printBoard(C)
