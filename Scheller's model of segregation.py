@@ -134,21 +134,19 @@ def next_life_generation(A,T):
                 newA[r][c]=A[r][c]
             elif countNeighbors(r,c,A)<T and A[r][c] != -1:
                 cord=emptycells(emptylist1,r,c,A)
-                print cord
                 if cord==-1:
                     pass
                 else:
                     newA[r][c]=' '
                     newA[cord[0]][cord[1]]=A[r][c]
-                    print [cord[0],cord[1]]
                     emptylist1=cord[2]
     return newA
 
-A=randomCells(.4,.4,5,5)
+A=randomCells(.3,.3,5,5)
 printBoard(A)
 print '------------------'
 B=next_life_generation(A,.5)
 printBoard(B)
-#print '------------------'
-#C=next_life_generation(A,.5)
-#printBoard(C)
+print '------------------'
+C=next_life_generation(A,.5)
+printBoard(C)
