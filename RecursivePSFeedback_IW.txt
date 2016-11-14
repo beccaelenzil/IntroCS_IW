@@ -1,7 +1,7 @@
 Total Score: 2/6
 Notes:
 -------------------------------------
-Problem 1) Recursive Drawing: 0/3
+Problem 1) Recursive Drawing: 0/3 (Late, changed to
 Notes: You provided a link to our course trinket page, not your trinket
 
 -------------------------------------
