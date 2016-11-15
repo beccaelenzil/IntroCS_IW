@@ -38,9 +38,9 @@ def randomCells(percentofA,percentofB,w, h):
 def copy(A):
     h=len(A)
     w=len(A[0])
-    newA=createBoard(h,w)
-    for row in range (h):
-        for col in range (w):
+    newA=createBoard(w,h)
+    for row in range(h-1):
+        for col in range(w-1):
             newA[row][col]=A[row][col]
     return newA
 
@@ -88,6 +88,7 @@ def countNeighbors(row,col,A):
     else:
         count=countA/(countA+countB)
         return count
+
 def emptylist(A):
     emptylist1=[]
     for r in range(0,len(A)-1):
@@ -142,11 +143,37 @@ def next_life_generation(A,T):
                     emptylist1=cord[2]
     return newA
 
-A=randomCells(.3,.3,5,5)
+def segregationIndex(A):
+    """
+    takes in a matrix and returns a segregation index
+    """
+    height=len(A)
+    width=len(A[0])
+    segregation = copy(A)
+    segregationList = []
+
+    for row in range(0,height-1):
+        for col in range(0,width-1):
+            if A[row][col] != ' ':
+                segregation[row][col] = countNeighbors(row,col,A)
+                # I could make a heat map of segregation
+
+                # put it into a list so we can easily take the average
+                segregationList.append(segregation[row][col])
+
+    # take the average of the segregationIndex for each cell to get a single metric
+    segregationIndex = sum(segregationList)/len(segregationList)
+
+    return [segregation, segregationIndex]
+
+A=randomCells(.3,.3,30,40)
 printBoard(A)
+print segregationIndex(A)[1]
 print '------------------'
 B=next_life_generation(A,.5)
 printBoard(B)
+print segregationIndex(B)[1]
 print '------------------'
 C=next_life_generation(A,.5)
 printBoard(C)
+print segregationIndex(C)[1]
