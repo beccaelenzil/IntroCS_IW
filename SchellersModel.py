@@ -3,7 +3,7 @@ import random
 def createOneRow(width): #create row
     row = []
     for col in range(width):
-        row += [0]
+        row += [' ']
     return row
 def createBoard(width, height): #returns a 2d array with "height" rows and "width" cols
     A = []
@@ -42,25 +42,6 @@ def copy(A):
     for row in range(h-1):
         for col in range(w-1):
             newA[row][col]=A[row][col]
-    return newA
-
-def innerReverse(A):
-    h=len(A)
-    w=len(A[0])
-    newA=copy(A)
-    for row in range (h):
-        for col in range (w):
-            newA[0][col]=1
-            newA[h-1][col]=1
-            newA[row][0]=1
-            newA[row][w-1]=1
-#reverse, it works
-    for row in range(0,h):
-        for col in range(0,w):
-            if newA[row][col]==1:
-                newA[row][col]=0
-            else:
-               newA[row][col]=1
     return newA
 
 def countNeighbors(row,col,A):
@@ -143,6 +124,33 @@ def next_life_generation(A,T):
                     emptylist1=cord[2]
     return newA
 
+def next_life_generation_simple(A,T):
+    emptylist1=emptylist(A)
+    random.shuffle(A)
+    newA=copy(A)
+    h=len(A)
+    w=len(A[0])
+    for r in range(0,len(A)-1):
+        for c in range(0,len(A[0])-1):
+            #below percent stays the same, also does spaces
+            if countNeighbors(r,c,A)>=T:
+                newA[r][c]=A[r][c]
+            elif countNeighbors(r,c,A)<T and A[r][c] != -1:
+                cord=emptycells(emptylist1,r,c,A)
+                if emptylist1==[]:
+                    pass
+                else:
+                    newA[r][c]=' '
+                    newA[emptylist1[0][0]][emptylist1[0][1]]=A[r][c]
+                    list.pop(emptylist1,0)
+#stoping point!!!! static check
+    if newA == A:
+
+        static = (newA == A)
+        return [static, A]
+    else:
+        return newA
+
 def segregationIndex(A):
     """
     takes in a matrix and returns a segregation index
@@ -165,8 +173,8 @@ def segregationIndex(A):
     segregationIndex = sum(segregationList)/len(segregationList)
 
     return [segregation, segregationIndex]
-
-A=randomCells(.3,.3,30,40)
+'''
+A=randomCells(.3,.3,15,15)
 printBoard(A)
 print segregationIndex(A)[1]
 print '------------------'
@@ -177,3 +185,19 @@ print '------------------'
 C=next_life_generation(A,.5)
 printBoard(C)
 print segregationIndex(C)[1]
+'''
+
+count=0
+A=randomCells(.3,.3,15,15)
+printBoard(A)
+print segregationIndex(A)[1]
+count=0
+print '------------------'
+B=next_life_generation_simple(A,.5)
+printBoard(B)
+print segregationIndex(B)[1]
+print '------------------'
+C=next_life_generation_simple(A,.5)
+printBoard(C)
+print segregationIndex(C)[1]
+
