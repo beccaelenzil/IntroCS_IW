@@ -122,34 +122,34 @@ def next_life_generation(A,T):
                     newA[r][c]=' '
                     newA[cord[0]][cord[1]]=A[r][c]
                     emptylist1=cord[2]
-    return newA
+    static = (newA == A)
+    return [static,newA]
 
 def next_life_generation_simple(A,T):
     emptylist1=emptylist(A)
     random.shuffle(A)
     newA=copy(A)
-    h=len(A)
-    w=len(A[0])
+    #h=len(A)
+    #w=len(A[0])
     for r in range(0,len(A)-1):
         for c in range(0,len(A[0])-1):
             #below percent stays the same, also does spaces
             if countNeighbors(r,c,A)>=T:
                 newA[r][c]=A[r][c]
-            elif countNeighbors(r,c,A)<T and A[r][c] != -1:
-                cord=emptycells(emptylist1,r,c,A)
+            if countNeighbors(r,c,A)<T:
+# and A[r][c] != -1:
+                #cord=emptycells(emptylist1,r,c,A)
                 if emptylist1==[]:
                     pass
                 else:
                     newA[r][c]=' '
                     newA[emptylist1[0][0]][emptylist1[0][1]]=A[r][c]
                     list.pop(emptylist1,0)
+                    #print emptylist1
 #stoping point!!!! static check
-    if newA == A:
 
-        static = (newA == A)
-        return [static, A]
-    else:
-        return newA
+    static = (newA == A)
+    return [static,newA]
 
 def segregationIndex(A):
     """
@@ -170,9 +170,11 @@ def segregationIndex(A):
                 segregationList.append(segregation[row][col])
 
     # take the average of the segregationIndex for each cell to get a single metric
-    segregationIndex = sum(segregationList)/len(segregationList)
-
-    return [segregation, segregationIndex]
+    if len(segregationList)==0:
+        return [' ','error']
+    else:
+        segregationIndex = sum(segregationList)/len(segregationList)
+        return [segregation, segregationIndex]
 '''
 A=randomCells(.3,.3,15,15)
 printBoard(A)
@@ -188,16 +190,22 @@ print segregationIndex(C)[1]
 '''
 
 count=0
-A=randomCells(.3,.3,15,15)
+A=randomCells(.3,.3,20,20)
 printBoard(A)
-print segregationIndex(A)[1]
-count=0
-print '------------------'
-B=next_life_generation_simple(A,.5)
-printBoard(B)
-print segregationIndex(B)[1]
-print '------------------'
-C=next_life_generation_simple(A,.5)
-printBoard(C)
-print segregationIndex(C)[1]
-
+static=0
+countaverage=[]
+#for i in range(10):
+    #[static,A]=next_life_generation(A,.5)
+    #print segregationIndex(A)[1], 'static=',static
+    #printBoard(A)
+for i in range(10):
+    A=randomCells(.4,.4,20,20)
+    static=0
+    count=0
+    while static!=True:
+        [static,A]=next_life_generation(A,.9)
+        #print segregationIndex(A)[1], 'static=',static
+        count+=1.0
+    print count
+    countaverage.append(count)
+print 'average is', sum(countaverage)/len(countaverage)

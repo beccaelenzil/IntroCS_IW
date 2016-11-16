@@ -56,7 +56,7 @@ while not done:
             done = True
 
 
-    A = next_life_generation_simple(A,.5)
+    A = next_life_generation(A,.5)
     drawBoard(A,width,height,cell_size,spacing)
 
     # --- Go ahead and update the screen with what we've drawn.
