@@ -20,6 +20,7 @@ def printBoard(A):
     return A
 
 def randomCells(percentofA,percentofB,w, h):
+    #generates a list of random As & Bs and  s.
     var1=percentofA*(w*h)
     var2=percentofB*(w*h)
     var1=int(var1)
@@ -28,6 +29,7 @@ def randomCells(percentofA,percentofB,w, h):
     var3=(w*h)-var1-var2
     assignlist=var1*['A']+var2*['B']+var3*[' ']
     assignlist1=random.sample(assignlist,len(assignlist))
+    #creates board and applys list to board 1 by 1
     A = createBoard(w, h)
     for row in range (0,h):
         for col in range (0,w):
@@ -36,6 +38,7 @@ def randomCells(percentofA,percentofB,w, h):
     return A
 
 def copy(A):
+    #hard copy by going through each cell
     h=len(A)
     w=len(A[0])
     newA=createBoard(w,h)
@@ -47,6 +50,7 @@ def copy(A):
 def countNeighbors(row,col,A):
     countA=-1
     countB=0
+    #identifies the number of simmilar cells/(#of simmilar+diffrent)
     if A[row][col]=='A':
         for r in range(row-1,row+2):
             for c in range(col-1,col+2):
@@ -61,6 +65,7 @@ def countNeighbors(row,col,A):
                     countA+=1.0
                 elif A[r][c]=='A':
                     countB+=1.0
+    #if its an empty space just return a placeholder
     elif A[row][col]==' ':
         return -1
 
@@ -131,23 +136,20 @@ def next_life_generation_simple(A,T):
     newA=copy(A)
     #h=len(A)
     #w=len(A[0])
+    listcount=0
     for r in range(0,len(A)-1):
         for c in range(0,len(A[0])-1):
             #below percent stays the same, also does spaces
-            if countNeighbors(r,c,A)>=T:
+            if countNeighbors(r,c,A)>=T or countNeighbors(r,c,A)!=-1:
                 newA[r][c]=A[r][c]
-            if countNeighbors(r,c,A)<T:
-# and A[r][c] != -1:
+            elif countNeighbors(r,c,A)<T and countNeighbors(r,c,A)!= -1:
                 #cord=emptycells(emptylist1,r,c,A)
                 if emptylist1==[]:
-                    pass
+                    newA[r][c]=A[r][c]
                 else:
                     newA[r][c]=' '
                     newA[emptylist1[0][0]][emptylist1[0][1]]=A[r][c]
-                    list.pop(emptylist1,0)
-                    #print emptylist1
-#stoping point!!!! static check
-
+                    emptylist1.pop(0)
     static = (newA == A)
     return [static,newA]
 
@@ -175,20 +177,23 @@ def segregationIndex(A):
     else:
         segregationIndex = sum(segregationList)/len(segregationList)
         return [segregation, segregationIndex]
-'''
-A=randomCells(.3,.3,15,15)
+
+A=randomCells(.4,.4,20,20)
 printBoard(A)
 print segregationIndex(A)[1]
-print '------------------'
-B=next_life_generation(A,.5)
-printBoard(B)
-print segregationIndex(B)[1]
-print '------------------'
-C=next_life_generation(A,.5)
-printBoard(C)
-print segregationIndex(C)[1]
-'''
+x=False
+count=0
+while x!=True:
+    print '------------------'
+    A=next_life_generation_simple(A,.9)[1]
+    x=next_life_generation_simple(A,.9)[0]
+    print x
+    printBoard(A)
+    print segregationIndex(A)[1]
+    count+=1
+print count
 
+'''
 count=0
 A=randomCells(.3,.3,20,20)
 printBoard(A)
@@ -203,9 +208,10 @@ for i in range(10):
     static=0
     count=0
     while static!=True:
-        [static,A]=next_life_generation(A,.9)
+        [static,A]=next_life_generation(A,.4)
         #print segregationIndex(A)[1], 'static=',static
         count+=1.0
     print count
     countaverage.append(count)
 print 'average is', sum(countaverage)/len(countaverage)
+'''
