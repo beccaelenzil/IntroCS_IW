@@ -23,7 +23,7 @@ pygame.init()
 size = (screen_width, screen_height)
 screen = pygame.display.set_mode(size)
 
-pygame.display.set_caption("Game Of Life")
+pygame.display.set_caption("Scheller's Model of Segregation")
 
 # Loop until the user clicks the close button.
 done = False
@@ -47,6 +47,7 @@ def drawBoard(A,width,height,cell_size,spacing):
 A=randomCells(.3,.3,width,height)
 drawBoard(A,width,height,cell_size,spacing)
 pygame.display.flip()
+i=0
 
 # -------- Main Program Loop -----------
 while not done:
@@ -55,15 +56,17 @@ while not done:
         if event.type == pygame.QUIT:
             done = True
 
-
-    A = next_life_generation(A,.5)
+    print i
+    [static,A] = next_life_generation(A,.5)
     drawBoard(A,width,height,cell_size,spacing)
+    i+=1
+    print i
 
     # --- Go ahead and update the screen with what we've drawn.
     pygame.display.flip()
 
     # --- Limit to 60 frames per second
-    #clock.tick(60)
+    clock.tick(60)
 
 # Close the window and quit.
 # If you forget this line, the program will 'hang'

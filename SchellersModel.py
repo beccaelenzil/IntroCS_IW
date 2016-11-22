@@ -177,7 +177,7 @@ def segregationIndex(A):
     else:
         segregationIndex = sum(segregationList)/len(segregationList)
         return [segregation, segregationIndex]
-
+'''
 A=randomCells(.4,.4,20,20)
 printBoard(A)
 print segregationIndex(A)[1]
@@ -191,7 +191,8 @@ while x!=True:
     printBoard(A)
     print segregationIndex(A)[1]
     count+=1
-print count
+print
+'''
 
 '''
 count=0
